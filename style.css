@@ -125,7 +125,7 @@ input {
       flex-wrap: nowrap;
   width: 100%;
   padding-left: 240px;
-  margin-bottom: 26px;
+  margin-bottom: 30px;
 }
 
 .header .header__wrapper .header__info .info__navigation {
@@ -228,6 +228,8 @@ input {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
   width: 100%;
 }
 
@@ -370,6 +372,7 @@ input {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 184px;
+  margin-left: 36px;
   font-size: 0;
 }
 

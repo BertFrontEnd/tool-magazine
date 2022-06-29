@@ -37,7 +37,7 @@
       @include alignment(space-between, flex-start, column, nowrap);
       width: 100%;
       padding-left: 240px;
-      margin-bottom: 26px;
+      margin-bottom: 30px;
 
       .info__navigation {
         @include alignment(space-between, flex-start, row, nowrap);
@@ -79,6 +79,7 @@
 
       .info__description {
         @include alignment(space-between, flex-start, row, nowrap);
+        column-gap: 20px;
         width: 100%;
 
         .description__banner {
@@ -180,6 +181,7 @@
         .description__contact {
           @include alignment(space-between, center, row, wrap);
           width: 184px;
+          margin-left: 36px;
           font-size: 0;
 
           .contact__text {
