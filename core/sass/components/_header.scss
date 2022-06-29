@@ -1,0 +1,318 @@
+.header {
+  .header__wrapper {
+    position: relative;
+    padding: 16px 135px 87px 135px;
+    position: relative;
+    @include alignment(space-between, flex-start, column, nowrap);
+    width: 100%;
+
+    .header__logo {
+      position: absolute;
+      top: 20px;
+      left: 240px;
+      @include alignment(center, center, column, nowrap);
+      width: 210px;
+      height: 112px;
+      background-color: $logo-bg-color;
+      transform: translateX(-50%);
+
+      .logo__image {
+        width: 95px;
+        height: 95px;
+        background-image: url('./assets/icons/logo.svg');
+        background-repeat: no-repeat;
+      }
+
+      .logo__description {
+        position: absolute;
+        bottom: -25px;
+        @extend %logo-font;
+        @include font-size(1.3rem, 700);
+        color: $logo-text-color;
+        text-transform: uppercase;
+      }
+    }
+
+    .header__info {
+      @include alignment(space-between, flex-start, column, nowrap);
+      width: 100%;
+      padding-left: 240px;
+      margin-bottom: 26px;
+
+      .info__navigation {
+        @include alignment(space-between, flex-start, row, nowrap);
+        width: 100%;
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid $border-navigation-bg-color;
+
+        .navigation__links {
+          font-size: 0;
+        }
+
+        .navigation__links {
+          @include alignment(space-between, flex-start, row, nowrap);
+          column-gap: 22px;
+
+          .links__item {
+            @include font-size(1.2rem, 400);
+
+            a {
+              color: $link-text-color;
+            }
+          }
+        }
+
+        .navigation__authorization {
+          @include alignment(space-between, flex-start, row, nowrap);
+          column-gap: 14px;
+
+          .authorization__item {
+            @include font-size(1.2rem, 400);
+
+            a {
+              color: $link-text-color;
+            }
+          }
+        }
+      }
+
+      .info__description {
+        @include alignment(space-between, flex-start, row, nowrap);
+        width: 100%;
+
+        .description__banner {
+          width: 253px;
+          height: 70px;
+          background-color: $banner-bg-color;
+        }
+
+        .description__counter {
+          @include alignment(space-between, flex-start, column, nowrap);
+          font-size: 0;
+
+          .counter__item {
+            @include font-size(1.4rem, 400);
+
+            a {
+              position: relative;
+              padding-left: 25px;
+              color: $link-text-color;
+              text-decoration: underline;
+
+              &::before {
+                position: absolute;
+                top: 50%;
+                left: 0px;
+                content: '';
+                width: 16px;
+                height: 16px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                transform: translateY(-50%);
+                @extend %transition;
+              }
+            }
+
+            &:nth-child(1) {
+              a {
+                &::before {
+                  background-image: url('./assets/icons/basket.svg');
+                }
+
+                &:hover {
+                  &::before {
+                    background-image: url('./assets/icons/basket-hover.svg');
+                  }
+                }
+              }
+            }
+
+            &:nth-child(2) {
+              a {
+                &::before {
+                  background-image: url('./assets/icons/star.svg');
+                }
+
+                &:hover {
+                  &::before {
+                    background-image: url('./assets/icons/star-hover.svg');
+                  }
+                }
+              }
+            }
+
+            &:nth-child(3) {
+              a {
+                &::before {
+                  background-image: url('./assets/icons/scales.svg');
+                }
+
+                &:hover {
+                  &::before {
+                    background-image: url('./assets/icons/scales-hover.svg');
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        .description__items {
+          @include alignment(space-between, center, row, nowrap);
+          column-gap: 15px;
+
+          .items__tool {
+            @include alignment(center, center, row, nowrap);
+            width: 70px;
+            height: 70px;
+            border: 1px solid $border-item-bg-color;
+            background-color: $primary-bg-color;
+
+            img {
+              width: 80%;
+              height: auto;
+            }
+          }
+        }
+
+        .description__contact {
+          @include alignment(space-between, center, row, wrap);
+          width: 184px;
+          font-size: 0;
+
+          .contact__text {
+            @include font-size(1.2rem, 700);
+            color: $other-text-color;
+            letter-spacing: 0.05px;
+          }
+
+          .contact__time {
+            @include font-size(1.2rem, 400);
+            color: $other-text-color;
+            letter-spacing: 0.05px;
+          }
+
+          .contact__phone {
+            margin-bottom: 4px;
+            border-bottom: 1px solid $border-phone-bg-color;
+            @include font-size(2.5rem, 700);
+            line-height: 52px;
+
+            a {
+              color: $link-text-color;
+            }
+          }
+
+          .contact__location {
+            @include font-size(1.2rem, 400);
+            color: $other-text-color;
+            letter-spacing: 0.05px;
+          }
+
+          .contact__option {
+            position: relative;
+            @include font-size(1.2rem, 400);
+            color: $other-text-color;
+            letter-spacing: 0.05px;
+
+            button {
+              padding: 0;
+              padding-left: 10px;
+              cursor: pointer;
+
+              &::before {
+                position: absolute;
+                top: 50%;
+                left: 0px;
+                content: '';
+                width: 7px;
+                height: 7px;
+                background-image: url('./assets/icons/arrow.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+                transform: translateY(-50%);
+                @extend %transition;
+              }
+
+              &:hover {
+                &::before {
+                  background-image: url('./assets/icons/arrow-hover.svg');
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .header__tools {
+      @include alignment(space-between, center, row, wrap);
+      width: 100%;
+      font-size: 0;
+      background-color: $tools-bg-color;
+      border-radius: 15px;
+
+      .tools__search,
+      .tools__item,
+      .tools__sale {
+        @include alignment(space-between, center, row, nowrap);
+        height: 34px;
+        @include font-size(1.4rem, 600);
+        @extend %transition;
+        cursor: pointer;
+      }
+
+      .tools__search {
+        input[type='submit'] {
+          height: 34px;
+          width: 36px;
+          color: transparent;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+          background-color: $active-bg-color;
+          background-image: url('./assets/icons/search.svg');
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 22px 22px;
+          cursor: pointer;
+        }
+
+        input[type='text'] {
+          height: 34px;
+          width: 57px;
+          padding-left: 10px;
+          background-color: $tools-bg-color;
+          color: $input-text-color;
+        }
+      }
+
+      .tools__item {
+        padding: 0 20px;
+        color: $tab-text-color;
+        background-color: $tools-bg-color;
+
+        &:hover {
+          color: $active-tab-text-color;
+          background-color: $active-bg-color;
+        }
+      }
+
+      .tools__sale {
+        padding: 0 17px;
+        text-transform: uppercase;
+        color: $sale-text-color;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        background-color: $active-bg-color;
+      }
+
+      .active {
+        color: $active-tab-text-color;
+        background-color: $active-bg-color;
+      }
+    }
+  }
+}

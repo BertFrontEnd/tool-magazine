@@ -14,35 +14,39 @@
   <body>
     <header class="header">
       <section class="header__wrapper wrapper">
-        <figure class="header__logo">
-          <img class="logo__image" alt="logo" />
-          <figcaption class="logo__descriiption">
-            Магазин инструмента
-          </figcaption>
-        </figure>
+        <a href="#" class="header__logo">
+          <div class="logo__image"></div>
+          <h1 class="logo__description">Магазин инструмента</h1>
+        </a>
         <div class="header__info">
           <nav class="info__navigation">
             <ul class="navigation__links">
-              <li><a href="#">Каталог инструментов</a></li>
-              <li><a href="#">Все для сада</a></li>
-              <li><a href="#">Ручной инструмент</a></li>
-              <li><a href="#">Электрика</a></li>
-              <li><a href="#">Доставка</a></li>
-              <li><a href="#">Оплата</a></li>
-              <li><a href="#">О нас</a></li>
+              <li class="links__item"><a href="#">Каталог инструментов</a></li>
+              <li class="links__item"><a href="#">Все для сада</a></li>
+              <li class="links__item"><a href="#">Ручной инструмент</a></li>
+              <li class="links__item"><a href="#">Электрика</a></li>
+              <li class="links__item"><a href="#">Доставка</a></li>
+              <li class="links__item"><a href="#">Оплата</a></li>
+              <li class="links__item"><a href="#">О нас</a></li>
             </ul>
             <ul class="navigation__authorization">
-              <li><a href="#">Вход</a></li>
-              <li><a href="#">|</a></li>
-              <li><a href="#">Регистрация</a></li>
+              <li class="authorization__item"><a href="#">Вход</a></li>
+              <li class="authorization__item"><a href="#">|</a></li>
+              <li class="authorization__item"><a href="#">Регистрация</a></li>
             </ul>
           </nav>
           <div class="info__description">
             <div class="description__banner"></div>
             <ul class="description__counter">
-              <li class="counter__item"></li>
-              <li class="counter__separator">/</li>
-              <li class="counter__cost"></li>
+              <li class="counter__item" id="count">
+                <a href="#">3 шт. / 17 250 р.</a>
+              </li>
+              <li class="counter__item" id="favorites">
+                <a href="#">Избранное (7)</a>
+              </li>
+              <li class="counter__item" id="compare">
+                <a href="#">К сравнению (5)</a>
+              </li>
             </ul>
             <ul class="description__items">
               <li class="items__tool">
@@ -62,18 +66,18 @@
                 <a href="tel:84957212525">8 495 721-25-25</a>
               </li>
               <li class="contact__location">Москва</li>
-              <li class="contact__option">сменить</li>
+              <li class="contact__option"><button>сменить</button></li>
             </ul>
           </div>
         </div>
         <ul class="header__tools">
           <li class="tools__search">
             <form>
-              <input type="button" />
+              <input type="submit" />
               <input type="text" />
             </form>
           </li>
-          <li class="tools__item">Перфораторы</li>
+          <li class="tools__item active">Перфораторы</li>
           <li class="tools__item">Дрели</li>
           <li class="tools__item">Шлифмашины</li>
           <li class="tools__item">Пистолеты</li>
