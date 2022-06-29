@@ -1,0 +1,35 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: 400;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=style.css.map */
