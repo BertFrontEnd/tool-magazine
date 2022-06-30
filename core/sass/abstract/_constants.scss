@@ -1,4 +1,4 @@
-$content-width: 1440px;
+$content-width-desktop: 1440px;
 
 $link-text-color: #252525;
 $other-text-color: #252525;
@@ -14,10 +14,20 @@ $border-item-bg-color: #d9d9d9;
 $border-navigation-bg-color: #d7d7d7;
 $border-phone-bg-color: #d7d7d7;
 $tools-bg-color: #252525;
+$burger-bg-color: #252525;
 
 $active-bg-color: #ffcc00;
 $active-tab-text-color: #000000;
 
 $hover-tools-bg-color: #ffcc00;
+$hover-burger-bg-color: #ffcc00;
 
 $navigation-text-color: #252525;
+
+$width-tablet-min: 768px;
+$width-tablet-max: 1279px;
+$content-width-tablet: 1000px;
+
+$width-mobile-max: 767px;
+$width-mobile-min: 320px;
+$content-width-mobile: 380px;

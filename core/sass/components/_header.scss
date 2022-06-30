@@ -34,28 +34,46 @@
     }
 
     .header__info {
-      @include alignment(space-between, flex-start, column, nowrap);
+      @include alignment(space-between, flex-start, row, wrap);
       width: 100%;
       padding-left: 240px;
       margin-bottom: 30px;
 
+      .info__menu {
+        display: none;
+
+        .menu__burger {
+          .burger__line {
+            @extend %transition;
+          }
+
+          .burger__switcher {
+            &:checked {
+              ~ .burger__line {
+                @extend %transition;
+              }
+            }
+          }
+        }
+      }
+
       .info__navigation {
-        @include alignment(space-between, flex-start, row, nowrap);
+        @include alignment(space-between, center, row, wrap);
+        row-gap: 10px;
         width: 100%;
         padding-bottom: 8px;
         margin-bottom: 20px;
         border-bottom: 1px solid $border-navigation-bg-color;
+        @extend %transition;
 
         .navigation__links {
-          font-size: 0;
-        }
-
-        .navigation__links {
-          @include alignment(space-between, flex-start, row, nowrap);
+          @include alignment(space-between, flex-start, row, wrap);
           column-gap: 22px;
+          font-size: 0;
 
           .links__item {
             @include font-size(1.2rem, 400);
+            text-align: center;
 
             a {
               color: $link-text-color;
@@ -78,8 +96,9 @@
       }
 
       .info__description {
-        @include alignment(space-between, flex-start, row, nowrap);
+        @include alignment(space-between, center, row, wrap);
         column-gap: 20px;
+        row-gap: 20px;
         width: 100%;
 
         .description__banner {
@@ -252,11 +271,8 @@
 
     .header__tools {
       @include alignment(center, center, row, wrap);
-      /* column-gap: 0; */
       width: 100%;
       font-size: 0;
-      /* background-color: $tools-bg-color; */
-      border-radius: 15px;
 
       .tools__search,
       .tools__item,
@@ -300,7 +316,6 @@
       }
 
       .tools__item {
-        /* padding: 0 20px; */
         color: $tab-text-color;
         background-color: $tools-bg-color;
 
@@ -311,7 +326,6 @@
       }
 
       .tools__sale {
-        /* padding: 0 17px; */
         text-transform: uppercase;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
