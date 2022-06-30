@@ -251,16 +251,18 @@
     }
 
     .header__tools {
-      @include alignment(space-between, center, row, wrap);
+      @include alignment(center, center, row, wrap);
+      /* column-gap: 0; */
       width: 100%;
       font-size: 0;
-      background-color: $tools-bg-color;
+      /* background-color: $tools-bg-color; */
       border-radius: 15px;
 
       .tools__search,
       .tools__item,
       .tools__sale {
-        @include alignment(space-between, center, row, nowrap);
+        @include alignment(center, center, row, nowrap);
+        flex-grow: 1;
         height: 34px;
         @include font-size(1.4rem, 600);
         @extend %transition;
@@ -268,9 +270,15 @@
       }
 
       .tools__search {
+        flex-grow: 0;
+
+        form {
+          @include alignment(center, center, row, nowrap);
+        }
+
         input[type='submit'] {
           height: 34px;
-          width: 36px;
+          width: 39px;
           color: transparent;
           border-top-left-radius: 10px;
           border-bottom-left-radius: 10px;
@@ -284,15 +292,15 @@
 
         input[type='text'] {
           height: 34px;
-          width: 57px;
-          padding-left: 10px;
+          width: 59px;
+          padding: 0 10px;
           background-color: $tools-bg-color;
           color: $input-text-color;
         }
       }
 
       .tools__item {
-        padding: 0 20px;
+        /* padding: 0 20px; */
         color: $tab-text-color;
         background-color: $tools-bg-color;
 
@@ -303,12 +311,15 @@
       }
 
       .tools__sale {
-        padding: 0 17px;
+        /* padding: 0 17px; */
         text-transform: uppercase;
-        color: $sale-text-color;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
         background-color: $active-bg-color;
+
+        a {
+          color: $sale-text-color;
+        }
       }
 
       .active {
