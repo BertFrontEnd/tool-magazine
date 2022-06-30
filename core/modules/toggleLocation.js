@@ -10,7 +10,7 @@ const toToggleLocation = (e) => {
     },
     {
       city: 'Минск',
-      phone: '8 029 788 95 13',
+      phone: '8 029 788-95-13',
       value: '80297889513',
       time: '9:00 — 18:00',
     },
