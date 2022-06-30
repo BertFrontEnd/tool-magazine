@@ -1,4 +1,4 @@
-.header .header__wrapper .header__info .info__menu .menu__burger .burger__line, .header .header__wrapper .header__info .info__menu .menu__burger .burger__switcher:checked ~ .burger__line, .header .header__wrapper .header__info .info__navigation, .header .header__wrapper .header__info .info__navigation .navigation__links .links__item a, .header .header__wrapper .header__info .info__navigation .navigation__authorization .authorization__item a, .header .header__wrapper .header__info .info__description .description__counter .counter__item a::before, .header .header__wrapper .header__info .info__description .description__items .items__tool, .header .header__wrapper .header__info .info__description .description__contact .contact__option button::before, .header .header__wrapper .header__tools .tools__search,
+.header .header__wrapper .header__info .info__menu .menu__burger .burger__line, .header .header__wrapper .header__info .info__menu .menu__burger .burger__switcher:checked ~ .burger__line, .header .header__wrapper .header__info .info__navigation, .header .header__wrapper .header__info .info__navigation .navigation__links .links__item a, .header .header__wrapper .header__info .info__navigation .navigation__authorization .authorization__item a, .header .header__wrapper .header__info .info__description .description__counter .counter__item a::before, .header .header__wrapper .header__info .info__description .description__items .items__tool, .header .header__wrapper .header__info .info__description .description__contact .contact__option button::before, .header .header__wrapper .header__info .info__description .description__contact .contact__option .option__dropdown .dropdown__item, .header .header__wrapper .header__tools .tools__search,
 .header .header__wrapper .header__tools .tools__item,
 .header .header__wrapper .header__tools .tools__sale {
   -webkit-transition: all 0.3s ease-out;
@@ -51,7 +51,7 @@ input {
 
 @media (min-width: 320px) and (max-width: 767px) {
   .wrapper {
-    max-width: 380px;
+    max-width: 300px;
   }
 }
 
@@ -466,10 +466,42 @@ input {
   background-size: contain;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  -webkit-transform-origin: 50%, 50%;
+          transform-origin: 50%, 50%;
 }
 
 .header .header__wrapper .header__info .info__description .description__contact .contact__option button:hover::before {
   background-image: url("./assets/icons/arrow-hover.svg");
+  -webkit-transform: translateY(-50%) rotate(90deg);
+          transform: translateY(-50%) rotate(90deg);
+}
+
+.header .header__wrapper .header__info .info__description .description__contact .contact__option .option__dropdown {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  display: none;
+  background-color: #ffffff;
+  min-width: 100px;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.header .header__wrapper .header__info .info__description .description__contact .contact__option .option__dropdown .dropdown__item {
+  padding: 12px 16px;
+  cursor: pointer;
+}
+
+.header .header__wrapper .header__info .info__description .description__contact .contact__option .option__dropdown .dropdown__item:hover {
+  background-color: #e2e2e2;
+}
+
+.header .header__wrapper .header__info .info__description .description__contact .contact__option .option__dropdown .dropdown__item:hover button::before {
+  display: none;
+}
+
+.header .header__wrapper .header__info .info__description .description__contact .contact__option:hover .option__dropdown {
+  display: block;
 }
 
 .header .header__wrapper .header__tools {
@@ -554,6 +586,8 @@ input {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 22px 22px;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
 
@@ -563,11 +597,15 @@ input {
   padding: 0 10px;
   background-color: #252525;
   color: #ffffff;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
 }
 
 .header .header__wrapper .header__tools .tools__item {
   color: #ffffff;
   background-color: #252525;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
 }
 
 .header .header__wrapper .header__tools .tools__item:hover {
@@ -580,6 +618,8 @@ input {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   background-color: #ffcc00;
+  -webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
 }
 
 .header .header__wrapper .header__tools .tools__sale a {
@@ -709,7 +749,7 @@ input {
     z-index: 15;
     display: block;
     position: fixed;
-    right: 10px;
+    right: 15px;
     top: 36px;
   }
   .header .header__wrapper .header__info .info__menu .menu__burger {
@@ -793,6 +833,8 @@ input {
     margin-bottom: 0;
     background-color: #ffffff;
     border: none;
+    -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
