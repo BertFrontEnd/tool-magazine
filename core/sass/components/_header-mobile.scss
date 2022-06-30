@@ -5,7 +5,7 @@
     .header__wrapper {
       position: static;
       @include alignment(center, center, column, wrap);
-      padding: 16px 30px 87px 30px;
+      padding: 16px 30px 16px 30px;
 
       .header__logo {
         position: static;
@@ -96,8 +96,7 @@
           width: 100%;
           padding: 20px;
           margin-bottom: 0;
-          /* background-color: $primary-bg-color; */
-          background-color: red;
+          background-color: $primary-bg-color;
           border: none;
           transform: translateX(-100%);
 
@@ -105,6 +104,10 @@
             @include alignment(center, center, column, wrap);
             row-gap: 20px;
           }
+        }
+
+        .active-menu {
+          transform: translateX(0);
         }
 
         .info__description {
