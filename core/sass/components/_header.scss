@@ -1,26 +1,27 @@
 .header {
   .header__wrapper {
     position: relative;
-    padding: 16px 135px 16px 135px;
+    padding: 15px 135px 16px 135px;
     position: relative;
     @include alignment(space-between, flex-start, column, nowrap);
     width: 100%;
 
     .header__logo {
       position: absolute;
-      top: 20px;
+      top: 19px;
       left: 240px;
       @include alignment(center, center, column, nowrap);
       width: 210px;
-      height: 112px;
+      height: 111px;
       background-color: $logo-bg-color;
       transform: translateX(-50%);
 
       .logo__image {
-        width: 95px;
-        height: 95px;
+        width: 94px;
+        height: 94px;
         background-image: url('./assets/icons/logo.svg');
         background-repeat: no-repeat;
+        background-position: 0 0;
       }
 
       .logo__description {
@@ -37,7 +38,7 @@
       @include alignment(space-between, flex-start, row, wrap);
       width: 100%;
       padding-left: 240px;
-      margin-bottom: 30px;
+      margin-bottom: 29px;
 
       .info__menu {
         display: none;
@@ -61,14 +62,14 @@
         @include alignment(space-between, center, row, wrap);
         row-gap: 10px;
         width: 100%;
-        padding-bottom: 8px;
+        padding-bottom: 5px;
         margin-bottom: 20px;
         border-bottom: 1px solid $border-navigation-bg-color;
         @extend %transition;
 
         .navigation__links {
           @include alignment(space-between, flex-start, row, wrap);
-          column-gap: 22px;
+          column-gap: 21px;
           font-size: 0;
 
           .links__item {
@@ -88,7 +89,7 @@
 
         .navigation__authorization {
           @include alignment(space-between, flex-start, row, nowrap);
-          column-gap: 14px;
+          column-gap: 12px;
 
           .authorization__item {
             @include font-size(1.2rem, 400);
@@ -106,7 +107,7 @@
       }
 
       .info__description {
-        @include alignment(space-between, center, row, wrap);
+        @include alignment(flex-start, flex-start, row, wrap);
         column-gap: 20px;
         row-gap: 20px;
         width: 100%;
@@ -119,70 +120,97 @@
 
         .description__counter {
           @include alignment(space-between, flex-start, column, nowrap);
+          row-gap: 8px;
+          margin-left: 15px;
           font-size: 0;
 
           .counter__item {
-            @include font-size(1.4rem, 400);
-
             a {
               position: relative;
               padding-left: 25px;
               color: $link-text-color;
-              text-decoration: underline;
+              letter-spacing: -0.1px;
 
               &::before {
                 position: absolute;
                 top: 50%;
-                left: 0px;
                 content: '';
-                width: 16px;
-                height: 16px;
+
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: contain;
                 transform: translateY(-50%);
                 @extend %transition;
               }
+
+              &::after {
+                position: absolute;
+                bottom: 1px;
+                right: 0;
+                width: calc(100% - 25px);
+                height: 1px;
+                content: '';
+                background-color: $link-text-color;
+              }
             }
+          }
 
-            &:nth-child(1) {
-              a {
+          .count {
+            @include font-size(1.4rem, 400);
+
+            a {
+              &::before {
+                left: -4px;
+                width: 17px;
+                height: 17px;
+                background-image: url('./assets/icons/basket.svg');
+              }
+
+              &::after {
+                bottom: 2px;
+              }
+
+              &:hover {
                 &::before {
-                  background-image: url('./assets/icons/basket.svg');
-                }
-
-                &:hover {
-                  &::before {
-                    background-image: url('./assets/icons/basket-hover.svg');
-                  }
+                  background-image: url('./assets/icons/basket-hover.svg');
                 }
               }
             }
+          }
 
-            &:nth-child(2) {
-              a {
+          .favorites {
+            @include font-size(1.2rem, 400);
+
+            a {
+              &::before {
+                left: -1px;
+                width: 15px;
+                height: 15px;
+                background-image: url('./assets/icons/star.svg');
+              }
+
+              &:hover {
                 &::before {
-                  background-image: url('./assets/icons/star.svg');
-                }
-
-                &:hover {
-                  &::before {
-                    background-image: url('./assets/icons/star-hover.svg');
-                  }
+                  background-image: url('./assets/icons/star-hover.svg');
                 }
               }
             }
+          }
 
-            &:nth-child(3) {
-              a {
+          .compare {
+            @include font-size(1.2rem, 400);
+
+            a {
+              &::before {
+                left: -2px;
+                width: 17px;
+                height: 17px;
+                background-image: url('./assets/icons/scales.svg');
+              }
+
+              &:hover {
                 &::before {
-                  background-image: url('./assets/icons/scales.svg');
-                }
-
-                &:hover {
-                  &::before {
-                    background-image: url('./assets/icons/scales-hover.svg');
-                  }
+                  background-image: url('./assets/icons/scales-hover.svg');
                 }
               }
             }
@@ -192,6 +220,7 @@
         .description__items {
           @include alignment(space-between, center, row, nowrap);
           column-gap: 15px;
+          margin-left: 15px;
 
           .items__tool {
             @include alignment(center, center, row, nowrap);
@@ -207,38 +236,42 @@
             }
 
             img {
-              width: 80%;
+              width: 82%;
               height: auto;
             }
           }
         }
 
         .description__contact {
-          @include alignment(space-between, center, row, wrap);
+          @include alignment(space-between, flex-start, row, wrap);
           width: 184px;
-          margin-left: 36px;
+          margin-left: 35px;
           font-size: 0;
 
           .contact__text {
-            @include font-size(1.2rem, 700);
+            @include font-size(1.1rem, 900);
             color: $other-text-color;
-            letter-spacing: 0.05px;
+            line-height: 10px;
+            letter-spacing: 0.3px;
           }
 
           .contact__time {
-            @include font-size(1.2rem, 400);
+            @include font-size(1.1rem, 500);
             color: $other-text-color;
-            letter-spacing: 0.05px;
+            line-height: 10px;
+            letter-spacing: 0.2px;
           }
 
           .contact__phone {
-            margin-bottom: 4px;
+            margin-top: 13px;
+            margin-bottom: 2px;
+            padding-bottom: 9px;
             border-bottom: 1px solid $border-phone-bg-color;
             @include font-size(2.5rem, 700);
-            line-height: 52px;
 
             a {
               color: $link-text-color;
+              letter-spacing: -0.5px;
             }
           }
 
@@ -255,6 +288,7 @@
             letter-spacing: 0.05px;
 
             button {
+              position: relative;
               padding: 0;
               padding-left: 10px;
               cursor: pointer;
@@ -262,7 +296,7 @@
               &::before {
                 position: absolute;
                 top: 50%;
-                left: 0px;
+                left: 0;
                 content: '';
                 width: 7px;
                 height: 7px;
@@ -275,10 +309,35 @@
                 @extend %transition;
               }
 
+              &::after {
+                position: absolute;
+                bottom: 2px;
+                right: 0;
+                width: 82%;
+                height: 1px;
+                content: '';
+                background-image: linear-gradient(
+                  to right,
+                  $other-text-color 50%,
+                  transparent 50%
+                );
+                background-repeat: repeat-x;
+                background-size: 2px 2px;
+                @extend %transition;
+              }
+
               &:hover {
                 &::before {
                   background-image: url('./assets/icons/arrow-hover.svg');
                   transform: translateY(-50%) rotate(90deg);
+                }
+
+                &::after {
+                  background-image: linear-gradient(
+                    to right,
+                    $hover-underline-color 50%,
+                    transparent 50%
+                  );
                 }
               }
             }
@@ -287,6 +346,7 @@
               z-index: 1;
               position: absolute;
               top: 0;
+              left: -2px;
               display: none;
               background-color: $primary-bg-color;
               min-width: 100px;
@@ -330,7 +390,8 @@
         @include alignment(center, center, row, nowrap);
         flex-grow: 1;
         height: 34px;
-        @include font-size(1.4rem, 600);
+        @include font-size(1.4rem, 400);
+        -webkit-text-stroke: 0.01px $tab-text-color;
         @extend %transition;
         cursor: pointer;
       }
@@ -374,12 +435,15 @@
 
         &:hover {
           color: $active-tab-text-color;
+          -webkit-text-stroke: 0.5px $active-tab-text-color;
           background-color: $active-bg-color;
         }
       }
 
       .tools__sale {
+        width: 81px;
         text-transform: uppercase;
+        -webkit-text-stroke: 0.5px $active-tab-text-color;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
         background-color: $active-bg-color;
@@ -392,6 +456,7 @@
 
       .active-link {
         color: $active-tab-text-color;
+        -webkit-text-stroke: 0.5px $active-tab-text-color;
         background-color: $active-bg-color;
       }
     }
